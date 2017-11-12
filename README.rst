@@ -1,4 +1,4 @@
 # tinydb-msgpack
-.. image:: tinympogo.png
+.. image:: tinymplogo.png
     :scale: 100%
     :height: 150px
