@@ -14,6 +14,7 @@ before_script:
   - python setup.py install
   - cd ../tests
   - ./modifytests.sh
+  - cd ..
 
 script:
   py.test -v tests
