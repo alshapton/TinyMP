@@ -22,7 +22,7 @@ before_script:
   - cd ../tests
   - ./modifytests.sh
   - cd ..
-  - cp tinymp tests
+  - cp tinymp.py tests
 
 script:
   - py.test -v --cov tests 
