@@ -12,6 +12,8 @@ before_script:
   - git clone https://github.com/msiemens/tinydb.git
   - cd tinydb
   - python setup.py install
+  - cd ../tests
+  - ./modifytests.sh
 
 script:
   py.test -v tests
