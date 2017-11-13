@@ -1,2 +1,6 @@
 tests/*.py
 
+
+tests/__pycache__/
+
+*.pyc
