@@ -7,3 +7,6 @@ python:
   
 install:
   - pip install -U pytest
+
+script:
+  py.test -v tests

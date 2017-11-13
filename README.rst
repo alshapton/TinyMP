@@ -1,4 +1,4 @@
-.. image:: tinymplogo.png
+.. image:: artwork/tinymplogo.png
     :scale: 100%
     :height: 150px
     
