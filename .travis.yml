@@ -8,12 +8,7 @@ python:
 install:
   - pip install -U pytest
   - pip install msgpack-python
-  - pip install coverage
-  - pip install coveralls
   - pip install pytest-cov
-  - pip install python-coveralls
-  - pip install coverage       # Add me to install coverage.py
-  - pip install nose           # Add me to install nose
 
 before_script:
   - git clone https://github.com/msiemens/tinydb.git
@@ -22,11 +17,9 @@ before_script:
   - cd ../tests
   - ./modifytests.sh
   - cd ..
-  - cp tinymp.py tests
 
 script:
-  - py.test -v --cov tests 
-  - nosetests --with-coverage # Add me to run nose with coverage support.
+  - py.test -v tests 
 
 after_success:
   - coveralls
