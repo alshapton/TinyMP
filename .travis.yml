@@ -22,9 +22,10 @@ before_script:
   - cd ../tests
   - ./modifytests.sh
   - cd ..
+  - cp tinymp tests
 
 script:
-  - py.test -v --cov tests
+  - py.test -v --cov tests 
   - nosetests --with-coverage # Add me to run nose with coverage support.
 
 after_success:
