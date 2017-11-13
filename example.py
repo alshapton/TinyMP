@@ -1,9 +1,11 @@
 from tinydb import TinyDB, Query,Storage
 
 import msgpack
-from tinydb-msgpack import *
+from tinymp import *
 
-db = TinyDB('data2.msg',storage=MsgPackStorage)
+db = TinyDB('data.msg',storage=MsgPackStorage)
 
-db.insert({'type': 'apple', 'count': 7})
-db.insert({'type': 'peach', 'count': 3})
+def dbins():
+   db.insert({'type': 'apple', 'count': 7})
+
+dbins()
