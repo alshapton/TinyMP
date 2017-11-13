@@ -25,6 +25,7 @@ before_script:
 
 script:
   - py.test -v --cov tests
+  - nosetests --with-coverage # Add me to run nose with coverage support.
 
 after_success:
   - coveralls
