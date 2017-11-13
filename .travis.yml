@@ -11,6 +11,9 @@ install:
   - pip install coverage
   - pip install coveralls
   - pip install pytest-cov
+  - pip install python-coveralls
+  - pip install coverage       # Add me to install coverage.py
+  - pip install nose           # Add me to install nose
 
 before_script:
   - git clone https://github.com/msiemens/tinydb.git
@@ -21,7 +24,9 @@ before_script:
   - cd ..
 
 script:
-  py.test -v --cov tests
+  - py.test -v --cov tests
 
 after_success:
-  coveralls
+  - coveralls
+
+
