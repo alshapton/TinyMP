@@ -3,5 +3,6 @@
     :height: 150px
     
 .. image:: https://travis-ci.org/alshapton/tinydb-msgpack.svg?branch=master
+.. image:: https://snyk.io/test/github/alshapton/tinydb-msgpack/badge.svg
 
 TinyMP is a storage backend for TinyDB which is based around the MessagePack compressed JSON format (https://msgpack.org/index.html)   
