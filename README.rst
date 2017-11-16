@@ -4,5 +4,7 @@
     
 .. image:: https://travis-ci.org/alshapton/tinydb-msgpack.svg?branch=master
 .. image:: https://snyk.io/test/github/alshapton/tinydb-msgpack/badge.svg
+.. image:: https://coveralls.io/repos/github/alshapton/tinydb-msgpack/badge.svg :target: https://coveralls.io/github/alshapton/tinydb-msgpack
+
 
 TinyMP is a storage backend for TinyDB which is based around the MessagePack compressed JSON format (https://msgpack.org/index.html)   
