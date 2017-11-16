@@ -3,7 +3,7 @@
     :height: 150px
     
 .. image:: https://travis-ci.org/alshapton/tinydb-msgpack.svg?branch=master
-.. image:: https://snyk.io/test/github/alshapton/tinydb-msgpack/badge.svg.
+.. image:: https://snyk.io/test/github/alshapton/tinydb-msgpack/badge.svg
 .. image:: https://codecov.io/gh/alshapton/tinydb-msgpack/branch/master/graph/badge.svg
 
 
