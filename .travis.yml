@@ -9,6 +9,7 @@ install:
   - pip install -U pytest
   - pip install msgpack-python
   - pip install pytest-cov
+  - pip install codecov
 
 before_script:
   - git clone https://github.com/msiemens/tinydb.git
@@ -22,6 +23,6 @@ script:
   - py.test -v tests 
 
 after_success:
-  - coveralls
+  - codecov
 
 
