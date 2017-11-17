@@ -22,8 +22,10 @@ before_script:
 script:
   - py.test -v tests 
   # run my python tests
-  - coverage run tests.py
-
+  - cd tests
+  - coverage run *.py
+  - mv .coverage ..
+  - cd ..
   # upload my python reports
   - bash <(curl -s https://codecov.io/bash) -cF python
 
