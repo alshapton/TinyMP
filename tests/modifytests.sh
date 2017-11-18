@@ -7,7 +7,6 @@ sed -i -e '/import/!s/JSONStorage/MsgPackStorage/g' *.py
 sed -i -e '/import/!s/JSON/MsgPack/g' *.py
 sed -i -e '/import/!s/json/MsgPack/g' *.py
 
-sed -i -e '/import/!s/MemoryStorage/MsgPackStorage/g' *.py
 
 echo "import msgpack" >> test_storages.py
 echo "from tinymp import *" >> test_storages.py
