@@ -11,19 +11,27 @@
 TinyMP is a storage backend for TinyDB https://github.com/msiemens/tinydb which is based around the MessagePack compressed JSON format (https://msgpack.org/index.html)   
 
 Example Usage:
+==============
 
-```python
+.. code:: python
 
-from tinydb import TinyDB, Query,Storage
 
-import msgpack
-from tinymp import *
+    from tinydb import TinyDB, Query,Storage
 
-db = TinyDB('data.msg',storage=MsgPackStorage)
+    import msgpack
+    from tinymp import *
 
-def dbins():
-   db.insert({'type': 'apple', 'count': 7})
+    db = TinyDB('data.msg',storage=MsgPackStorage)
+    
+    def dbins():
+       db.insert({'type': 'apple', 'count': 7})
+    
+    dbins()
 
-dbins()
 
-```
+As you can see, it's a simple drop-in replacement for any storage engine
+and it cab be nested and cached.
+
+References:
+===========
+
