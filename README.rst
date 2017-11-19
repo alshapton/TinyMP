@@ -35,6 +35,6 @@ and it can be nested and cached.
 References:
 ===========
 
-TinyDB      https://github.com/msiemens/tinydb 
-MessagePack https://msgpack.org/index.html
+* TinyDB      https://github.com/msiemens/tinydb 
+* MessagePack https://msgpack.org/index.html
 
