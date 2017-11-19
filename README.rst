@@ -30,8 +30,11 @@ Example Usage:
 
 
 As you can see, it's a simple drop-in replacement for any storage engine
-and it cab be nested and cached.
+and it can be nested and cached.
 
 References:
 ===========
+
+TinyDB      https://github.com/msiemens/tinydb 
+MessagePack https://msgpack.org/index.html
 
