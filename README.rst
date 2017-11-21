@@ -2,7 +2,7 @@
     :scale: 100%
     :height: 150px
     
-.. image:: https://travis-ci.org/alshapton/TinyMP?branch=master
+.. image:: https://travis-ci.org/alshapton/TinyMP.svg?branch=master
 .. image:: https://snyk.io/test/github/alshapton/tinydb-msgpack/badge.svg
 .. image:: https://codecov.io/gh/alshapton/TinyMP/branch/master/graph/badge.svg
 
@@ -15,8 +15,7 @@ Example Usage:
 
 .. code:: python
 
-
-    from tinydb import TinyDB, Query,Storage
+    from tinydb import TinyDB, Query
 
     import msgpack
     from tinymp import *
@@ -27,7 +26,6 @@ Example Usage:
        db.insert({'type': 'apple', 'count': 7})
     
     dbins()
-
 
 As you can see, it's a simple drop-in replacement for any storage engine
 and it can be nested and cached.
