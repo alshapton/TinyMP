@@ -4,3 +4,4 @@ tests/__pycache__/
 
 tests/*.pyc
 *.pyc
+.coverage
