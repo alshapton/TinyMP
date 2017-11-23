@@ -22,6 +22,7 @@ class MsgPackStorage(Storage):
         super(MsgPackStorage, self).__init__()
         touch(path, create_dirs=create_dirs)  # Create file if not exists
         self.kwargs = kwargs
+        self.library=self.kwargs['Lib']
         self._handle = open(path, 'r+')
 
 
