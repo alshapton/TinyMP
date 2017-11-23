@@ -12,17 +12,14 @@ install:
   - pip install u-msgpack-python
   - pip install pytest-cov
   - pip install codecov
+  - pip install tinydb
 
 before_script:
-  - git clone https://github.com/msiemens/tinydb.git
-  - cd tinydb
-  - sudo python setup.py install
-  - cd ..
   - sudo python setup.py install
   - cd tests
   - ./modifytests.sh
-  - cp ../tinymp.py .
-  - cd ..
+  #- cp ../tinymp.py .
+  #- cd ..
 
 script:
   - py.test -v tests 
