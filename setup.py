@@ -14,7 +14,7 @@ exec(read('./version.py'))
 
 
 setup(
-    name="TinyMP",
+    name="tinymp",
     version=__version__,
     packages=find_packages(),
 
