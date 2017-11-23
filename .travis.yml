@@ -21,7 +21,7 @@ before_script:
   - python setup.py install
   - cd tests
   - ./modifytests.sh
-  #- cp ../tinymp.py .
+  - cp ../tinymp.py .
   - cd ..
 
 script:
