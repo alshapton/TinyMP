@@ -1,5 +1,8 @@
+try:
+    import umsgpack as msgpack
+except ImportError:
+    import msgpack
 
-import msgpack
 from tinydb import Storage
 
 import os
