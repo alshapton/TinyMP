@@ -5,7 +5,6 @@ language: python
 
 python:
   - "2.7"
-  - "3.6"
   
 install:
   - pip install -U pytest
@@ -13,11 +12,9 @@ install:
   - pip install pytest-cov
   - pip install codecov
   - pip install tinydb
-  - pip3 install tinydb
 
 before_script:
   - sudo python setup.py install
-  - sudo python3 setup.py install
   - cd tests
   - ./modifytests.sh
   - cp ../tinymp.py .
