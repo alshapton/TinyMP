@@ -1,10 +1,3 @@
-try:
-    import umsgpack as msgpack
-except ImportError:
-    import msgpack
-
-
-
 
 from tinydb import Storage
 
@@ -25,16 +18,26 @@ class MsgPackStorage(Storage):
         super(MsgPackStorage, self).__init__()
         touch(path, create_dirs=create_dirs)  # Create file if not exists
         self.kwargs = kwargs
-        self.library=self.kwargs['Lib']
-        self._handle = open(path, 'r+')
-        if self.library == 'umsgpack':
-           print 'ultra-messagepack'
-           import umsgpack as msgpack
-           self.msgpack=msgpack
+        '''
+        Import the correct msgpack library
+        '''
+        if 'Lib' in kwargs:
+           self.library=self.kwargs['Lib']
+
+           if self.library == 'umsgpack':
+              print 'ultra-messagepack'
+              import umsgpack as msgpack
+              self.msgpack=msgpack
+           else:
+              print 'messagepack'
+              import msgpack
+              self.msgpack=msgpack
         else:
-           print 'messagepack'
+           print 'default'
            import msgpack
            self.msgpack=msgpack
+ 
+        self._handle = open(path, 'r+')
 
     def write(self, data):
         self._handle.seek(0)
