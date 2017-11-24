@@ -8,6 +8,7 @@ python:
   
 install:
   - pip install -U pytest
+  - pip install msgpack-python
   - pip install u-msgpack-python
   - pip install pytest-cov
   - pip install codecov
