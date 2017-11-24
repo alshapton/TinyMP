@@ -48,7 +48,7 @@ and it can be nested and cached.
 Changes
 =======
 
-* Version 1.0.0-Beta3 - xx/xx/2017
+* Version 1.0.0-Beta3 - 24/11/2017
     * Added support for u-msgpack-python alternative msgpack library
 
 * Version 1.0.0-Beta2 - 11/21/2017
