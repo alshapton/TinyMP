@@ -3,6 +3,9 @@ try:
 except ImportError:
     import msgpack
 
+
+
+
 from tinydb import Storage
 
 import os
@@ -24,11 +27,18 @@ class MsgPackStorage(Storage):
         self.kwargs = kwargs
         self.library=self.kwargs['Lib']
         self._handle = open(path, 'r+')
-
+        if self.library == 'umsgpack':
+           print 'ultra-messagepack'
+           import umsgpack as msgpack
+           self.msgpack=msgpack
+        else:
+           print 'messagepack'
+           import msgpack
+           self.msgpack=msgpack
 
     def write(self, data):
         self._handle.seek(0)
-        serialized = msgpack.dump(data, self._handle)
+        serialized = self.msgpack.dump(data, self._handle)
         #self._handle.write(serialized)
         self._handle.flush()
         self._handle.truncate()
@@ -44,7 +54,7 @@ class MsgPackStorage(Storage):
             return None
         else:
             self._handle.seek(0)
-            return  msgpack.unpackb(self._handle.read()) 
+            return  self.msgpack.unpackb(self._handle.read()) 
 
 
     def close(self):
