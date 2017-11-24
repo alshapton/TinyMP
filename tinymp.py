@@ -1,5 +1,4 @@
 
-import msgpack
 from tinydb import Storage
 
 import os
@@ -19,12 +18,30 @@ class MsgPackStorage(Storage):
         super(MsgPackStorage, self).__init__()
         touch(path, create_dirs=create_dirs)  # Create file if not exists
         self.kwargs = kwargs
-        self._handle = open(path, 'r+')
+        '''
+        Import the correct msgpack library
+        '''
+        if 'Lib' in kwargs:
+           self.library=self.kwargs['Lib']
 
+           if self.library == 'umsgpack':
+              print 'ultra-messagepack'
+              import umsgpack as msgpack
+              self.msgpack=msgpack
+           else:
+              print 'messagepack'
+              import msgpack
+              self.msgpack=msgpack
+        else:
+           print 'default'
+           import msgpack
+           self.msgpack=msgpack
+ 
+        self._handle = open(path, 'r+')
 
     def write(self, data):
         self._handle.seek(0)
-        serialized = msgpack.dump(data, self._handle)
+        serialized = self.msgpack.dump(data, self._handle)
         #self._handle.write(serialized)
         self._handle.flush()
         self._handle.truncate()
@@ -40,7 +57,7 @@ class MsgPackStorage(Storage):
             return None
         else:
             self._handle.seek(0)
-            return  msgpack.unpackb(self._handle.read()) 
+            return  self.msgpack.unpackb(self._handle.read()) 
 
 
     def close(self):

@@ -1,8 +1,4 @@
 
-
-
-
-
 sudo: false
 
 language: python
@@ -13,21 +9,20 @@ python:
 install:
   - pip install -U pytest
   - pip install msgpack-python
+  - pip install u-msgpack-python
   - pip install pytest-cov
   - pip install codecov
+  - pip install tinydb
 
 before_script:
-  - git clone https://github.com/msiemens/tinydb.git
-  - cd tinydb
-  - python setup.py install
-  - cd ../tests
+  - sudo python setup.py install
+  - cd tests
   - ./modifytests.sh
   - cp ../tinymp.py .
   - cd ..
 
 script:
   - py.test -v tests 
-  # run my python tests
   - cd tests
   - cp ../tinymp.py .
   - coverage run *.py
