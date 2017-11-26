@@ -44,8 +44,8 @@ Example Usage:
 
 As you can see, it's a simple drop-in replacement for any storage engine
 and it can be nested and cached. Don't forget, you will need to install as a minimum,
-the ``msgpack-python`` library using ``pip install msgpack-python`` and the U-MsgPack
-library from `` https://github.com/vsergeev/u-msgpack-python`` in order to use that option.
+the ``msgpack-python`` library using ``pip install msgpack-python`` and the ``U-MsgPack``
+library from https://github.com/vsergeev/u-msgpack-python in order to use that option.
 
 Example Usage using alternative MessagePack Library:
 ====================================================
