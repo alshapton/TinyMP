@@ -14,7 +14,6 @@ def touch(fname, create_dirs):
 
 class MsgPackStorage(Storage):
     def __init__(self, path, create_dirs=False, **kwargs):
-        #self.filename = filename
         super(MsgPackStorage, self).__init__()
         touch(path, create_dirs=create_dirs)  # Create file if not exists
         self.kwargs = kwargs
@@ -25,15 +24,12 @@ class MsgPackStorage(Storage):
            self.library=self.kwargs['Lib']
 
            if self.library == 'umsgpack':
-              print 'ultra-messagepack'
               import umsgpack as msgpack
               self.msgpack=msgpack
            else:
-              print 'messagepack'
               import msgpack
               self.msgpack=msgpack
         else:
-           print 'default'
            import msgpack
            self.msgpack=msgpack
  
@@ -42,7 +38,6 @@ class MsgPackStorage(Storage):
     def write(self, data):
         self._handle.seek(0)
         serialized = self.msgpack.dump(data, self._handle)
-        #self._handle.write(serialized)
         self._handle.flush()
         self._handle.truncate()
 
