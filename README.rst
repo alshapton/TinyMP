@@ -9,6 +9,22 @@
 
 
 TinyMP is a storage backend for TinyDB https://github.com/msiemens/tinydb which is based around the MessagePack compressed JSON format (https://msgpack.org/index.html)   
+Syntax :
+========
+TinyMP extends the syntax of the ``tinydb`` class using one of the optional ``kwargs`` as follows:
+
+
+.. code:: python
+    class tinydb.database.TinyDB(*args, **kwargs)
+
+.. csv-table:: Values for ``**kwargs``
+   :header: "Value","Effect"
+   :widths: 10,90
+
+   "``storage=MsgPackStorage``","Default option, will use the ``MsgPack`` library"
+   "``storage=MsgpackStorage,Lib='msgpack'``","Will use the ``MsgPack`` library"
+   "``storage=MsgpackStorage,Lib='umsgpack'``","Will use the ``U-MsgPack`` Library"
+
 
 Example Usage:
 ==============
@@ -19,6 +35,26 @@ Example Usage:
     from tinymp import *
 
     db = TinyDB('data.msg',storage=MsgPackStorage)
+    
+    def dbins():
+       db.insert({'type': 'apple', 'count': 7})
+    
+    dbins()
+
+As you can see, it's a simple drop-in replacement for any storage engine
+and it can be nested and cached. Don't forget, you will need to install as a minimum,
+the ``msgpack-python`` library using ``pip install msgpack-python`` and the U-MsgPack
+library from `` https://github.com/vsergeev/u-msgpack-python`` in order to use that option.
+
+Example Usage using alternative MessagePack Library:
+====================================================
+
+.. code:: python
+
+    from tinydb import TinyDB, Query
+    from tinymp import *
+
+    db = TinyDB('data.msg',storage=MsgPackStorage,Lib='umsgpack')
     
     def dbins():
        db.insert({'type': 'apple', 'count': 7})
@@ -45,25 +81,6 @@ in storage footprint with U-MsgPack) is dependent on your use case.
    "JSON Write:", 2.147,2.011,2.040,"37.0 Kb"
    "MsgPack Write:", 9.562,9.732,9.716,"21.1 Kb"
    "U-MsgPack Write:", 9.354,9.066,8.949,"24.1 Kb"
-
-
-Example Usage using alternative MessgaePack Library:
-====================================================
-
-.. code:: python
-
-    from tinydb import TinyDB, Query
-    from tinymp import *
-
-    db = TinyDB('data.msg',storage=MsgPackStorage,Lib='umsgpack')
-    
-    def dbins():
-       db.insert({'type': 'apple', 'count': 7})
-    
-    dbins()
-
-As you can see, it's a simple drop-in replacement for any storage engine
-and it can be nested and cached.
 
 Changes
 =======
