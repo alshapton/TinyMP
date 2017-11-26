@@ -34,9 +34,8 @@ setup(
         "Intended Audience :: System Administrators",
         "License :: OSI Approved :: MIT License",
         "Topic :: Database",
-        "Topic :: Database :: Storage Backend",
         "Topic :: Utilities",
-        "Programming Language :: Python :: 2.6",
+        "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: Implementation :: PyPy",
         "Operating System :: OS Independent"
     ],
