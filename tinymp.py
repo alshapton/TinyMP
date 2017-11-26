@@ -25,15 +25,12 @@ class MsgPackStorage(Storage):
            self.library=self.kwargs['Lib']
 
            if self.library == 'umsgpack':
-              print 'ultra-messagepack'
               import umsgpack as msgpack
               self.msgpack=msgpack
            else:
-              print 'messagepack'
               import msgpack
               self.msgpack=msgpack
         else:
-           print 'default'
            import msgpack
            self.msgpack=msgpack
  

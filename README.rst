@@ -48,6 +48,8 @@ and it can be nested and cached.
 Changes
 =======
 
+* Version 1.0.0-Beta4 - xx/xx/2017
+
 * Version 1.0.0-Beta3 - 24/11/2017
     * Added support for u-msgpack-python alternative msgpack library
 
