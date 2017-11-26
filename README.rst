@@ -38,7 +38,7 @@ the JSON format. Whether you choose the default MsgPack library, which is
 marginally slower than the U-MsgPack library (at the cost of a small increase
 in storage footprint with U-MsgPack) is dependent on your use case.
 
-.. compound::
+.. code:: python
 
   Run #1                             Run #2                Run #3   
 
@@ -76,6 +76,7 @@ Changes
 =======
 
 * Version 1.0.0-Beta4 - xx/xx/2017
+    * Added descriptions of benchmarking and tidied up repo
 
 * Version 1.0.0-Beta3 - 24/11/2017
     * Added support for u-msgpack-python alternative msgpack library
