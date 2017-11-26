@@ -28,6 +28,32 @@ Example Usage:
 As you can see, it's a simple drop-in replacement for any storage engine
 and it can be nested and cached.
 
+Why would I use this?
+=====================
+Looking at the statistics below, it's apparent that compared to the "standard"
+JSON Storage mechanism, MessagePack isn't as quick, however, the filesizes on
+disc are smaller - consider the table below, with 1,000 JSON documents of 
+minute size - clearly, the MessagePack compressed format is smaller than
+the JSON format. Whether you choose the default MsgPack library, which is 
+marginally slower than the U-MsgPack library (at the cost of a small increase
+in storage footprint with U-MsgPack) is dependent on your use case.
+
+'''
+  Run #1                             Run #2                Run #3   
+
+JSON                       
+  Write Time: = 2.147171974182129s   2.0117878913879395s   2.0401060581207275s
+  File Size:  = 37.0 KB              37.0 KB               37.0 KB            
+
+MsgPack
+  Write Time: = 9.562603950500488s   9.7328492474328474s   9.716863870620728s
+  File Size:  = 21.1 KB              21.1 KB               21.1 KB
+
+U-MsgpPack
+  Write Time: = 9.354284048080444s   9.066617012023926s    8.94924020767212s
+  File Size:  = 24.1 KB              24.1 KB               24.1 KB
+'''
+
 Example Usage using alternative MessgaePack Library:
 ====================================================
 
