@@ -9,6 +9,7 @@
 
 
 TinyMP is a storage backend for TinyDB https://github.com/msiemens/tinydb which is based around the MessagePack compressed JSON format (https://msgpack.org/index.html)   
+
 Syntax :
 ========
 TinyMP extends the syntax of the ``tinydb`` class using one of the optional ``kwargs`` as follows:
@@ -22,8 +23,8 @@ TinyMP extends the syntax of the ``tinydb`` class using one of the optional ``kw
    :widths: 10,90
 
    "``storage=MsgPackStorage``","Default option, will use the ``MsgPack`` library"
-   "``storage=MsgpackStorage,Lib='msgpack'``","Will use the ``MsgPack`` library"
-   "``storage=MsgpackStorage,Lib='umsgpack'``","Will use the ``U-MsgPack`` Library"
+   "``storage=MsgPackStorage,Lib='msgpack'``","Will use the ``MsgPack`` library"
+   "``storage=MsgPackStorage,Lib='umsgpack'``","Will use the ``U-MsgPack`` Library"
 
 
 Example Usage:
