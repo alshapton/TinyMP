@@ -27,7 +27,7 @@ setup(
     description="TinyMP is a MessagePack Storage extension for the TinyDB database https://github.com/msiemens/tinydb",
     license="MIT",
     keywords="database nosql python tinydb documentdb",
-    url="https://github.com/alshapton/TinyMP",
+    url="https://github.com/alshapton/TinyMP/",
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
