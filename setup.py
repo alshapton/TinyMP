@@ -9,6 +9,7 @@ def read(fname):
     path = os.path.join(os.path.dirname(__file__), fname)
     return open(path, encoding='utf-8').read()
 
+
 # This will set the version string to __version__
 exec(read('./version.py'))
 
