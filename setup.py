@@ -11,7 +11,7 @@ def read(fname):
 
 
 # This will set the version string to __version__
-exec(read('./version.py'))
+__version__ = '1.0.0-Beta5'
 
 
 setup(
@@ -37,6 +37,7 @@ setup(
         "Topic :: Database",
         "Topic :: Utilities",
         "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3.4",
         "Programming Language :: Python :: Implementation :: PyPy",
         "Operating System :: OS Independent"
     ],
