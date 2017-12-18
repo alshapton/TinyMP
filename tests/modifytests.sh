@@ -15,7 +15,7 @@ sed -i -e "1s/^/from __future__ import absolute_import\n/" test_storages.py
 sed -i -e "1s/^/from __future__ import absolute_import\n/" test_middlewares.py
 
 echo "import umsgpack as msgpack" >> conftest.py
-echo "import .tinymp" >> conftest.py
+echo "import tinymp" >> conftest.py
 
 sed -i -e '/import/!s/JSONStorage/MsgPackStorage/g' *.py
 sed -i -e '/import/!s/JSON/MsgPack/g' *.py
