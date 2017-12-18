@@ -11,7 +11,7 @@
 
 
 echo "import umsgpack as msgpack" >> conftest.py
-echo "import tinymp" >> conftest.py
+echo "from tinymp import *" >> conftest.py
 
 sed -i -e '/import/!s/JSONStorage/MsgPackStorage/g' *.py
 sed -i -e '/import/!s/JSON/MsgPack/g' *.py
