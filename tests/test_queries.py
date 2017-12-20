@@ -1,4 +1,3 @@
-from builtins import str
 import pytest
 from tinydb.queries import Query
 

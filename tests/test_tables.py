@@ -1,4 +1,3 @@
-from builtins import range
 import pytest
 
 from tinydb import where
