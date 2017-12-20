@@ -1,3 +1,5 @@
+from builtins import str
+from builtins import range
 import os
 
 from tinydb import TinyDB
@@ -34,7 +36,7 @@ def test_caching_write_many(storage):
     assert storage.memory is None
 
     # Write contents
-    for x in xrange(2):
+    for x in range(2):
         storage.write(doc)
         assert storage.memory is None  # Still cached
 
