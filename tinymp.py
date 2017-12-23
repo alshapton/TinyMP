@@ -3,6 +3,7 @@ from tinydb import Storage
 
 import os
 
+
 def touch(fname, create_dirs):
     if create_dirs:
         base_dir = os.path.dirname(fname)
@@ -11,6 +12,7 @@ def touch(fname, create_dirs):
 
     with open(fname, 'a'):
         os.utime(fname, None)
+
 
 class MsgPackStorage(Storage):
     def __init__(self, path, create_dirs=False, **kwargs):
@@ -21,18 +23,18 @@ class MsgPackStorage(Storage):
         Import the correct msgpack library
         '''
         if 'Lib' in kwargs:
-           self.library=self.kwargs['Lib']
+            self.library = self.kwargs['Lib']
 
-           if self.library == 'umsgpack':
-              import umsgpack as msgpack
-              self.msgpack=msgpack
-           else:
-              import msgpack
-              self.msgpack=msgpack
+            if self.library == 'umsgpack':
+                import umsgpack as msgpack
+                self.msgpack = msgpack
+            else:
+                import msgpack
+                self.msgpack = msgpack
         else:
-           import msgpack
-           self.msgpack=msgpack
- 
+            import msgpack
+            self.msgpack = msgpack
+
         self._handle = open(path, 'r+')
 
     def write(self, data):
@@ -40,7 +42,6 @@ class MsgPackStorage(Storage):
         serialized = self.msgpack.dump(data, self._handle)
         self._handle.flush()
         self._handle.truncate()
-
 
     def read(self):
         # Get the file size
@@ -52,8 +53,7 @@ class MsgPackStorage(Storage):
             return None
         else:
             self._handle.seek(0)
-            return  self.msgpack.unpackb(self._handle.read()) 
-
+            return self.msgpack.unpackb(self._handle.read())
 
     def close(self):
         self._handle.close()

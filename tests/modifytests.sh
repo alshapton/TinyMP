@@ -9,6 +9,8 @@
 # Create new copies of the Python scripts for each StorageClass subtype
 #ls -1  test*.py| awk 'BEGIN     { FS = "." } { print "cp " $0 " " $1".msgpack.py; cp "$0 " " $1 ".umsgpack.py"  }' 
 
+# from future import absolute_import
+
 
 echo "import umsgpack as msgpack" >> conftest.py
 echo "from tinymp import *" >> conftest.py

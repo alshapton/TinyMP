@@ -9,8 +9,9 @@ def read(fname):
     path = os.path.join(os.path.dirname(__file__), fname)
     return open(path, encoding='utf-8').read()
 
+
 # This will set the version string to __version__
-exec(read('./version.py'))
+__version__ = '1.0.0-Beta5'
 
 
 setup(
@@ -27,16 +28,16 @@ setup(
     description="TinyMP is a MessagePack Storage extension for the TinyDB database https://github.com/msiemens/tinydb",
     license="MIT",
     keywords="database nosql python tinydb documentdb",
-    url="https://github.com/alshapton/TinyMP",
+    url="https://github.com/alshapton/TinyMP/",
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
         "Intended Audience :: System Administrators",
         "License :: OSI Approved :: MIT License",
         "Topic :: Database",
-        "Topic :: Database :: Storage Backend",
         "Topic :: Utilities",
-        "Programming Language :: Python :: 2.6",
+        "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3.4",
         "Programming Language :: Python :: Implementation :: PyPy",
         "Operating System :: OS Independent"
     ],

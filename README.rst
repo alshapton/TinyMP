@@ -5,6 +5,7 @@
 .. image:: https://travis-ci.org/alshapton/TinyMP.svg?branch=master
 .. image:: https://snyk.io/test/github/alshapton/tinydb-msgpack/badge.svg
 .. image:: https://codecov.io/gh/alshapton/TinyMP/branch/master/graph/badge.svg
+.. image:: https://img.shields.io/badge/code%20style-pep8-orange.svg
 
 
 
@@ -85,6 +86,10 @@ in storage footprint with U-MsgPack) is dependent on your use case.
 
 Changes
 =======
+
+* Version 1.0.0-Beta5 - XX/XX/XXXX
+    * Added PiPy compatibility 
+    * PEP-8 Compliant code style
 
 * Version 1.0.0-Beta4 - 11/26/2017
     * Added descriptions of benchmarking and tidied up repo
